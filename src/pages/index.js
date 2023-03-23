@@ -1,176 +1,306 @@
-import * as React from "react"
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import React, { useState } from "react"
+import * as indexStyles from '../styling/style.module.css'
+import { Link, graphql } from "gatsby"
+import Layout from "../components/layout/layout"
+// import Dropdown from 'react-bootstrap/Dropdown';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
+import Accordion from 'react-bootstrap/Accordion';
+import { AiOutlineSearch } from "react-icons/ai";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+// import { BsBuilding } from "react-icons/bs";
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+import { BsArrowRight } from "react-icons/bs"
+import { StaticImage } from "gatsby-plugin-image"
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+// react Bootstrap Confirguration
+import "../../node_modules/react-bootstrap/dist/react-bootstrap";
+import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
+import Seo from '../components/seo'
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
+// import { renderRichText } from 'gatsby-source-contentful/rich-text'
+// import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
+// const options = {
+//   renderMark: {
+//     [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
+//   },
+//   renderNode: {
+//     [INLINES.HYPERLINK]: (node, children) => {
+//       const { uri } = node.data
+//       return (
+//         <a href={uri} className="underline">
+//           {children}
+//         </a>
+//       )
+//     },
+//     [BLOCKS.HEADING_2]: (node, children) => {
+//       return <h2>{children}</h2>
+//     },
+//   },
+// }
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+const Home = ({ data }) => {
+  const [category, setCategory] = useState(null)
+  const [priceFilter, setPriceFilter] = useState(null)
+  const [isActive, SetIsActive] = useState(false)
 
-const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
+    <Layout>
+      <section>
+        <div className={indexStyles.heroHeader}>
+          <h1>Every <span>Furniture</span> has a <br /> beautiful story</h1>
+        </div>
+        <div className={indexStyles.heroGrid}>
+          <div>
+            <StaticImage alt='logo' src='../images/Group 10152.png' />
+          </div>
+          <div className={indexStyles.heroContent}>
+            <p>We are the best furniture platform. We are already working on thousands of <br /> future home projects. Trust us, you will surely be satisfied.</p>
+            <div className={indexStyles.heroContentGrid}>
+              <StaticImage alt='logo' src='../images/vector.png' className={indexStyles.heroContentImage} />
+              <button>Shop Now</button>
+              <p>Contact Us <span><StaticImage alt='logo' src='../images/vectorr.png' className={indexStyles.heroContentArrow} /></span> </p>
+            </div>
+          </div>
+          <div>
+            <StaticImage alt='' src='../images/Group 10151.png' />
+          </div>
+
+        </div>
+        <div className={indexStyles.serviceGrid}>
+          <div className={indexStyles.serviceGridBlue}>
+            <StaticImage alt='logo' src='../images/car.png' className={indexStyles.serviceGridImg} />
+            <div className={indexStyles.serviceGridContentBlue}>
+              <h4>Fast Delivery</h4>
+              <p>We offer you the best shopping experience of same day delivery to our customers</p>
+            </div>
+          </div>
+          <div className={indexStyles.serviceGridRed}>
+            <StaticImage alt='logo' src='../images/truck.png' className={indexStyles.serviceGridImg} />
+            <div className={indexStyles.serviceGridContentRed}>
+              <h4>Free Return</h4>
+              <p>You can return all eligible item(s) within 15 days for Official Store</p>
+            </div>
+          </div>
+          <div className={indexStyles.serviceGridYellow}>
+            <StaticImage alt='logo' src='../images/support.png' className={indexStyles.serviceGridImg} />
+            <div className={indexStyles.serviceGridContentYellow}>
+              <h4>24/7 Support</h4>
+              <p>We are here to ensure our customers' success and business productivity</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className={indexStyles.productGrid}>
+          <div>
+            <div>
+              <form>
+                <input type="text" placeholder="Search.." name="search" className={indexStyles.searchInput} />
+                <button type="submit"  className={indexStyles.searchButton}><AiOutlineSearch /></button>
+              </form>
+            </div>
+            <div className={indexStyles.dropdown}>
+              <div className={indexStyles.dropdownBtn} onClick={(e) =>
+                SetIsActive(!isActive)} >Categories
+                <span><MdOutlineKeyboardArrowDown /></span>
+              </div>
+              {isActive && (
+                <div className={indexStyles.dropdownContent}>
+                  <div className={indexStyles.dropdownItem}>
+                    <div>
+                      <StaticImage alt='logo' src='../images/home.png' className={indexStyles.dropdownImage} />
+                    </div>
+                    <span onClick={() => setCategory('All')}>All</span>
+                  </div>
+                  {data?.allContentfulCategory.nodes.map((node, i) => (
+                    <div className={indexStyles.dropdownItem}>
+                      <div>
+                        <img alt='logo' src={node?.categoryImage.url} className={indexStyles.dropdownImage} />
+                      </div>
+                      <span key={node?.id}
+                        onClick={() => setCategory(node?.categoryName)}
+                      >
+                        {node?.categoryName}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
+            </div>
+            <div className={indexStyles.dropdown}>
+              <div className={indexStyles.dropdownBtn} onClick={(e) =>
+                SetIsActive(!isActive)}>Price
+                <span><MdOutlineKeyboardArrowDown /></span>
+              </div>
+              {isActive && (
+                <div className={indexStyles.dropdownContent}>
+                  <div className={indexStyles.dropdownItem}>
+                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
+                    All
+                  </div>
+                  <div className={indexStyles.dropdownItem}>
+                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(1)} />
+                    Under 50,000
+                  </div>
+                  <div className={indexStyles.dropdownItem}>
+                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(2)} />
+                    50,000-100,000
+                  </div>
+                  <div className={indexStyles.dropdownItem}>
+                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(3)} />
+                    100,000-150,000
+                  </div>
+                  <div className={indexStyles.dropdownItem}>
+                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(4)} />
+                    150,000-200,000
+                  </div>
+                  <div className={indexStyles.dropdownItem}>
+                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(5)} />
+                    200,000-250,000
+                  </div>
+                  <div className={indexStyles.dropdownItem}>
+                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(6)} />
+                    Over 250,000
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          <div>
+            <div className={indexStyles.productImageGrid}>
+              {data?.allContentfulProduct.nodes.filter((node) => {
+                if (category === null || category === 'All') {
+                  return node
+                } else if (node?.category[0].categoryName.toLowerCase().includes(category.toLowerCase())) {
+                  return node
+                }
+                return false
+              }).filter((node) => {
+                if (priceFilter === null) {
+                  return node
+                } else {
+                  const minPrice = (priceFilter - 1) * 50000 + 1
+                  const maxPrice = priceFilter * 50000
+                  return node.productPrice >= minPrice && node.productPrice <= maxPrice
+                } 
+              }).map((node, i) => (
+                <div key={node?.id}>
+                  <div className={indexStyles.productGridBox}>
+                    <div className={indexStyles.productGridBoxImageCon}>
+                      <img
+                        alt='productImage'
+                        src={node?.productImage1.url}
+                        className={indexStyles.productGridBoxImage}
+                      />
+                    </div>
+                    <h3 key={node.productName}>{node.productName}</h3>
+                    <p key={node.productParagraph}>{node.productParagraph}</p>
+                    <div className={indexStyles.productBoxGrid}>
+                      <h5 key={node.productPrice}>#{node.productPrice}</h5>
+                      <Link to={`/index/${node.id}`}><h6>BUY NOW <span><BsArrowRight /></span></h6></Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className={indexStyles.productGridButton}>
+              <Link to="/shop"><button>View more</button></Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <section>
+        <div className={indexStyles.designGrid}>
+          <div>
+            <StaticImage src='../images/Group 35260.png' />
+          </div>
+          <div className={indexStyles.designGridContent}>
+            <h5>Designing Modern, Unique & <span>Smart Furniture</span> </h5>
+            <p>Unique furniture makes a statement. With modern furniture design, you can transform a space in ways that wall art can’t. If you want to impress your guests, eye-catching furniture will have a bigger impact.</p>
+            <p>There isn’t a rule that says you can’t use unique furniture in a living room, dining room, or home office. However, such furniture is relegated to game rooms or backyard areas.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className={indexStyles.accordionContainer}>
+          <h1>Frequently Asked <span>Questions</span> (FAQs)</h1>
+          <div>
+            <Accordion defaultActiveKey="0" flush variant="outline-light">
+              {data?.allContentfulAccordion.nodes.map((node, i) => (
+                <Accordion.Item eventKey={node.accordionId}>
+                  <Accordion.Header><strong>{node.header}</strong></Accordion.Header>
+                  <Accordion.Body>
+                    {node.accordionParagraph.accordionParagraph}
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 }
+export const query = graphql`
+query Homepage {
+  allContentfulProduct(limit :9) {
+    nodes {
+      category {
+        categoryName
+        contentful_id
+        id
+      }
+      id
+      productColor
+      productDescription {
+        raw
+      }
+      productImage1 {
+        url
+      }
+      productImage2 {
+        url
+      }
+      productImage3 {
+        url
+      }
+      productImage4 {
+        url
+      }
+      productMaterial
+      productName
+      productParagraph
+      productPrice
+      productSeatingCapacity
+      productSize
+    }
+  
+  }
+  allContentfulAccordion(limit: 5){
+    nodes {
+      accordionId
+      header
+      id
+      accordionParagraph {
+        accordionParagraph
+      }
+    }
+  }
+  allContentfulCategory(limit: 10) {
+    nodes {
+      categoryName
+      categoryImage{
+        url
+      }
+    }
+  }
+}
+`;
 
-export default IndexPage
+export default Home
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <Seo title="Home Page" />

@@ -1,0 +1,31 @@
+.mySwiper{
+    position: relative;
+}
+#box-swiper .swiper-button-prev{
+    background-image: url(../images/arrow-right.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    transform: rotate(180deg);
+      transform-origin: left center;
+    /* top: 0 !important; */
+    top: 60% !important;
+    z-index: 100;
+    left: 2% !important;
+}
+#box-swiper .swiper-button-next{
+    background-image: url(../images/arrow-right.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    /* transform: rotate(90deg);
+      transform-origin: left center; */
+    /* top: 0 !important; */
+    top: 60% !important;
+    z-index: 100;
+    /* left: 50% !important; */
+}
+#box-swiper .swiper-button-next::after,
+#box-swiper .swiper-button-prev::after {
+  display: none;
+}

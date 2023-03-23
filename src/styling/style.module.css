@@ -1,0 +1,1045 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+section{
+    margin: 0 4rem;
+}
+.heroHeader h1{
+    font-family: 'Lalezar';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #171718;
+    margin-top: 1.5rem;
+}
+
+.heroHeader span{
+    color: #FE5E00;
+    
+}
+
+.heroGrid{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+}
+
+.heroContent p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 31px;
+    text-align: center;
+    color: #171718;
+    margin-top: 2rem;
+}
+
+
+.heroContentGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    gap: 1rem;
+}
+
+.heroContentImage{
+    width:60px;
+    height: 70px;
+    object-fit: cover;
+    margin: 1rem 0 2rem 6rem;
+} 
+
+.heroContentGrid  button{
+    background: #FE5E00;
+    box-shadow: 0px 4px 38px rgba(254, 94, 0, 0.25);
+    border-radius: 10px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+    color: #FFFFFF;
+    height: 40px;
+    width: 120px;
+    border: none;
+    margin-top: 1rem;
+}
+
+.heroContentGrid p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: #171718;
+    margin-left: -13rem;
+    margin-top: 20px;
+}
+
+.heroContentArrow{
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+}
+
+.serviceGrid{
+    margin: 2rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.serviceGridBlue{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    gap: 1rem;
+    background: rgba(91, 214, 226, 0.1);
+    box-shadow: 0px 0px 2px rgba(91, 214, 226, 0.35);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.serviceGridRed{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    gap: 1rem;
+    background:  rgba(255, 222, 222, 0.6);
+    box-shadow: 0px 0px 2px rgba(91, 214, 226, 0.35);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.serviceGridYellow{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    gap: 1rem;
+    background:   rgba(254, 232, 190, 0.6);
+    box-shadow: 0px 0px 2px rgba(91, 214, 226, 0.35);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.serviceGridImg{
+    width: 50px;
+    height: 50px;
+    margin-top: 1.5rem;
+}
+
+.serviceGridContentBlue{
+    border-left: 2px solid  rgba(91, 214, 226, 0.35);
+    padding-left: 1rem;
+}
+
+.serviceGridContentRed{
+    border-left: 2px solid   #F9BABA;
+    padding-left: 1rem;
+}
+
+.serviceGridContentYellow{
+    border-left: 2px solid   #F3D498;
+    padding-left: 1rem;
+}
+
+.serviceGridContentBlue h4,
+.serviceGridContentRed h4,
+.serviceGridContentYellow h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000958;
+    margin-bottom: 0.5rem;
+}
+
+.serviceGridContentBlue p,
+.serviceGridContentRed p,
+.serviceGridContentYellow p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #656689;
+}
+
+
+.productGrid{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+.productImageGrid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+section{
+    background-color: #fafafa;
+}
+
+
+layout{
+    background: #fafafa;
+}
+.productGridBox{
+    background: #ffff;
+    box-shadow:0px 4px 4px rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.productGridBox h3{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    color: #171718;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+
+.productGridBox p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.379167px;
+    color: #171718;
+    margin-bottom: 1rem;
+}
+
+.productBoxGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.productBoxGrid h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 21px;
+    color: #FE5E00;
+}
+
+.productBoxGrid a,
+.productBoxGrid h6{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FE5E00;
+    text-decoration: none;
+    padding: 0;
+}
+
+.productBoxGrid h6 span{
+    font-size: 15px;
+}
+
+.productGridBoxImageCon{
+    width: 213px;
+    height:224px ;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.productGridBoxImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.productGridButton button{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    background: #FE5E00;
+    box-shadow: 0px 4px 38px rgba(254, 94, 0, 0.25);
+    border-radius: 8px;
+    width: 180px;
+    padding: 0.5rem 0;
+}
+
+.productGridButton{
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.designGrid{
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+.designGridContent{
+    margin-top: 6rem;
+}
+
+.designGridContent h5{
+    font-family: 'Lalezar';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 60px;
+    color: #171718;
+    margin-bottom: 2rem;
+}
+
+.designGridContent h5 span{
+    color: #FE5E00;
+}
+
+.designGridContent p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #171718;
+}
+
+.accordionContainer h1{
+    font-family: 'Lalezar';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 60px;
+    color: #171718;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.accordionContainer h1 span{
+    color: #FE5E00;
+}
+
+/* New Accordion code */
+
+
+
+
+
+.searchInput{
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 10.5px -7.88px rgba(0, 0, 0, 0.25);
+    border-radius: 8px 0px 0px 8px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #171718;
+    width: 100px;
+    outline: none;
+    border: none;
+    height: 40px;
+    margin: 2rem 0;
+    padding: 0.2rem 1rem;
+}
+
+.searchInput span{
+    display: none;
+}
+
+.searchButton{
+    background-color: #FE5E00;
+    color: #fff;
+    padding:0.3rem 0.5rem;
+    font-size: 20px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.paginationButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    gap: 1rem;
+}
+
+.paginationButton button{
+    background: #FFFFFF;
+    border: 1.5px solid #FE5E00;
+    padding:1px 8px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    color: #171718;
+    
+}
+
+.paginationButton button:hover{
+    background: #FE5E00;
+    color: #fff;
+}
+
+.paginationIcon{
+    margin-top: -0.3rem;
+}
+
+@media (min-width: 766px) {
+.descriptionSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+}
+
+.descriptionContainer{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 1rem;
+}
+
+.descriptionImages{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.descriptionImage{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.descriptionContainerImage{
+    width: 260px;
+    object-fit: contain;
+    margin-top: 3rem;
+}
+
+.descriptionContainerContent h1{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 160%;
+    color: #171718;
+}
+
+.descriptionContainerContent p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 160%;
+    color: #171718;
+    opacity: 0.6;
+}
+
+.descriptionContainerContent h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 160%;
+    color: #171718;
+    margin-bottom: 1rem;
+}
+
+.descriptionContainerContent button{
+    background: #FE5E00;
+    border-radius: 8px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    padding:0.35rem 2rem;
+    line-height: 160%;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+
+}
+
+.descriptionContainerContentImages{
+    display: flex;
+    gap: 1rem;
+}
+
+.descriptionContainerContentImage{
+    width: 50px;
+}
+
+.pageDescription{
+    border-top:  0.7px solid rgba(0, 0, 0, 0.21);
+    padding-top: 4rem;
+    
+}
+
+.pageDescription h1{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 160%;
+    color: #171718;
+    margin-bottom: 2rem;
+}
+
+.pageDescriptionBoxes{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pageDescriptionBox{
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem ;
+}
+
+.pageDescriptionBoxImage{
+    margin-bottom: 1rem;
+}
+
+.pageDescriptionBox p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #7A7A7A;
+    margin-bottom: 1rem;
+}
+
+.pageDescriptionBox h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 160%;
+    color: #FE5E00;
+}
+
+.pageDescriptionContent p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 160%;
+    color: #171718;
+}
+
+/* Dropdown */
+.dropdown{
+    width: 200px;
+    /* margin: 100px auto; */
+    user-select: none;
+    position: relative;
+    display: block;
+}
+
+.dropdown .dropdownBtn{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #171718;
+    opacity: 0.8;
+}
+
+.dropdown .dropdownBtn span{
+    font-size: 30px;
+    margin-left: 2rem;
+    margin-top: 0.2rem;
+}
+
+.dropdown .dropdownContent{
+    position: relative;
+    top: 110%;
+    left: 0;
+    /* background: #fff; */
+}
+.dropdown .dropdownContent,
+.dropdown .dropdownContent span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(23, 23, 24, 0.6);
+
+}
+
+
+.dropdown .dropdownContent .dropdownItem{
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: grid;
+    grid-template-columns: 0.175fr 1fr;
+}
+
+
+.dropdownImage{
+    width: 20px;
+    margin-top: 2px;
+}
+
+.dropdownItem {
+   fill: #656689;
+}
+.similarProducts{
+    background: #ffff;
+    box-shadow:0px 4px 4px rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.similarProducts h3{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    color: #171718;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+
+.similarProducts p{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.379167px;
+    color: #171718;
+    margin-bottom: 1rem;
+}
+.similarProductsSection h2{
+    margin:2rem 0;
+}
+input[type="radio"] {
+    margin-right: 5px;
+  }
+
+
+
+@media (max-width: 1024px) {
+    section{
+     margin: 0 ;
+    }
+
+    .heroContentGrid p{
+     margin-left: -50px;
+    }
+
+    .productImageGrid{
+     grid-template-columns: repeat(2, 1fr);
+     gap: 1rem;
+    }
+
+    .productGridBoxImageCon{
+     width: 255px;
+     height: 224px;
+     margin: auto;
+    }
+
+    .productGridBoxImage{
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+    }
+
+    .productGrid{
+     grid-template-columns: 0.5fr 2fr;
+     }
+
+    .productBoxGrid{
+     gap: 5rem;
+    }
+
+    .productGridBox{
+     padding: 0rem;
+ }
+ }
+ 
+
+ @media (max-width: 765px) {
+     html,
+     body{
+         height: 100%;
+         width: 100%;
+     }
+
+     section{
+         margin: 0 1.5rem;
+     }
+
+     .descriptionSection{
+        display: grid;
+        grid-template-columns: -1fr 1fr;
+        gap: 1rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+     }
+
+     .heroHeader h1{
+         position: inherit;
+         margin-top: 10px;
+         font-style: normal;
+         font-size: 38px;
+         line-height: 44px;
+         text-align: center;
+     }
+
+     .heroContent p{
+         font-size: 13px;
+         line-height: 22px;
+         margin-top: 0rem;
+     }
+
+     .heroContentGrid{
+         justify-items: center;
+         grid-template-columns: 0fr 1fr 0fr;
+         gap: 0rem;
+         margin-top: 50px;
+         margin-right: -60px;
+     }
+
+     .heroContentImage{
+         display: none;
+     }
+
+     .navbar h2{
+         margin: 0;
+         position: absolute;
+     }
+
+     .serviceGrid{
+         margin: 0;
+         margin-top: 80px;
+         gap: 0;
+     }
+
+     .heroContentGrid  button{
+         margin-top: -1rem;
+         margin-left: -35px;
+         font-size: 18px;
+         line-height: 35px;
+         height: 50px;
+         width: 110px;
+     }
+
+     .heroContentGrid p{
+         color: #FE5E00;
+     }
+
+     .serviceGridImg{
+         width: 25px;
+         height: 25px;
+         margin-top: 0rem;
+     }
+
+     .serviceGrid{
+        background-color: #ffff;
+        padding: 1rem 0.5rem;
+        margin: 2rem ;
+        gap: 1rem;
+        border-radius: 25px;
+        box-shadow: 0px 3.5px 10.5px -7.875px rgba(0, 0, 0, 0.25);
+    }
+
+     .serviceGridBlue{
+         grid-template-columns: 0fr 1fr;
+         gap: 0rem;
+         padding: 0rem;
+         margin-left: 16px;
+         background: #fff;
+         box-shadow: none;
+         /* box-shadow: 0px 3.5px 10.5px -7.875px rgba(0, 0, 0, 0.25); */
+     }
+
+     .serviceGridRed{
+         grid-template-columns: 0fr 1fr;
+         gap: 0rem;
+         padding: 0rem;
+         background: #fff;
+         box-shadow: none;
+         border-radius: 0;
+     }
+
+     .serviceGridYellow{
+         grid-template-columns: 0fr 1fr;
+         gap: 0rem;
+         padding: 0rem;
+         margin-right: 16px;
+         background: #fff;
+         box-shadow: none;
+     }
+
+     .serviceGridContentBlue{
+         border-left: 0;
+         padding-left: 0.4rem;
+     }
+
+     .serviceGridContentRed{
+         border-left: 0;
+         padding-left: 0.4rem;
+     }
+
+     .serviceGridContentYellow{
+         border-left: 0;
+         padding-left: 0.4rem;
+     }
+
+     .serviceGridContentBlue h4,
+     .serviceGridContentRed h4,
+     .serviceGridContentYellow h4{
+         font-size: 10px;
+         line-height: 14px;
+         margin-bottom: 0.2rem;
+     }
+
+     .serviceGridContentBlue p,
+     .serviceGridContentRed p,
+     .serviceGridContentYellow p{
+         line-height: 12px;
+         margin-bottom: 0rem;
+         font-size: 9px;
+     }
+     
+     .searchInput{
+         font-size: 15px;
+         width: 75%;
+         height: 50px;
+         margin: 2rem 15px;
+         padding: 0.2rem 2rem;
+     }
+
+     .searchButton{
+        /* display: none; */
+         padding: 0.5rem 0.5rem;
+         padding-bottom: 0.7rem;
+         font-size: 20px;
+         border-radius: 6px;
+     }
+
+     .dropdown{
+        background-color: #fff;
+        border-radius: 20px;
+        left: 1rem;
+        padding-left: 20px;
+     }
+
+     .productGrid{
+         display: block;
+     }
+
+     .productImageGrid{
+         grid-template-columns: repeat(2, 1fr);
+         gap: 1rem;
+         margin-top: 2rem;
+     }
+
+     .productGridBox{
+         padding: 0rem;
+     }
+
+     .productGridBoxImage{
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+     }
+
+     .productGridBoxImageCon{
+         width: 100px;
+         height: 100px;
+     }
+
+     .productGridBox h3{
+         margin-bottom: 0;
+         font-size: 16px;
+     }
+
+     .productGridBox p{
+        font-size: 12px;
+        line-height: 20px;
+     }
+
+     .productBoxGrid{
+         margin-left: 0px;
+     }
+
+     .productBoxGrid{
+         gap: 2rem;
+     }
+
+     .productGridButton button{
+         font-size: 20px;
+         width: 190px;
+         padding: 0.7rem 0;
+     }
+
+     .designGrid{
+         grid-template-columns: 0.7fr 1fr;
+         gap: 1rem;
+     }
+
+     .designGridContent h5{
+         font-size: 19px;
+         line-height: 30px;
+         margin-bottom: 0rem;
+     }
+
+     .designGridContent p{
+         font-size: 10px;
+         line-height: 15px;
+     }
+
+     .designGridContent{
+         margin-top: 2rem;
+     }
+
+     .accordionContainer h1{
+         font-size: 20px;
+         margin: 0rem 0;
+     }
+
+     .accordionContainer .accordion-flush{
+        font-size: 2px;
+     }
+
+     .descriptionContainerImage{
+        width: 220px;
+        margin-top: 2rem;
+     }
+
+     .descriptionContainerContentImages{
+        gap: 3rem 3rem;
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+     }
+
+     .descriptionContainerContent button{
+        font-size: 19px;
+        padding: 1rem 6rem;
+        line-height: 140%;
+        display: block;
+        margin: 0 auto;
+     }
+
+     .descriptionContainerContent h4{
+        font-size: 25px;
+        margin-bottom: 1rem;
+        margin-left: 0rem;
+     }
+
+     .descriptionContainerContent p{
+        font-size: 17px;
+        opacity: 0.6;
+        margin-left: 0rem;
+     }
+
+     .descriptionContainerContent h1{
+        font-size: 24px;
+        line-height: 160%;
+        margin-left: 0rem;
+     }
+
+     .pageDescriptionContent p{
+        font-size: 13px;
+     }
+
+     .similarProductsSection{
+        margin: 0 0.5rem;
+     }
+
+     .similarProducts{
+        padding: 0rem;
+     }
+
+     .similarProducts h3{
+        line-height: 120%;
+        margin-bottom: 0.6rem;
+     }
+
+     .pageDescription{
+        padding-top: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+     }
+
+     .pageDescriptionBox{
+        padding: 0.5rem;
+     }
+
+     .pageDescriptionBox h4{
+        font-size: 10px;
+     }
+
+     .pageDescriptionBoxes{
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+     }
+ }
+ @media (max-width: 480px) {
+    section{
+        margin: 0 1.5rem;
+    } 
+
+    .productBoxGrid h5 {
+        font-size: 10px;
+    }
+
+    .productBoxGrid h6{
+        font-size: 9px;
+    }
+    .productBoxGrid {
+        gap: 0.5rem;
+    }
+    .accordionContainer h1 {
+        font-size: 15px;
+        margin: 1rem 0;
+    }
+
+    .serviceGrid{
+        padding: 1rem 0rem;
+        margin: 2rem 0rem;
+    }
+    .serviceGridContentBlue h4,
+     .serviceGridContentRed h4,
+     .serviceGridContentYellow h4{
+         font-size: 9px;
+     }
+
+     .serviceGridContentBlue p,
+     .serviceGridContentRed p,
+     .serviceGridContentYellow p{
+         font-size: 8px;
+     }
+    
+ }
