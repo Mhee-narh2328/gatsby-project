@@ -57,7 +57,7 @@ const Home = ({ data }) => {
             <StaticImage alt='logo' src='../images/Group 10152.png' />
           </div>
           <div className={indexStyles.heroContent}>
-            <p>We are the best furniture platforms. We are already working on thousands of <br /> future home projects. Trust us, you will surely be satisfied.</p>
+            <p>We are the best furniture platform. We are already working on thousands of <br /> future home projects. Trust us, you will surely be satisfied.</p>
             <div className={indexStyles.heroContentGrid}>
               <StaticImage alt='logo' src='../images/vector.png' className={indexStyles.heroContentImage} />
               <button>Shop Now</button>
