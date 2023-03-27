@@ -930,7 +930,7 @@ input[type="radio"] {
 
      .designGridContent h5{
          font-size: 19px;
-         line-height: 30px;
+         line-height: 20px;
          margin-bottom: 0rem;
      }
 
@@ -1067,6 +1067,11 @@ input[type="radio"] {
     }
     
     .accordionContainer h6{
+        font-size: 9px;
+        line-height: 15px;
+    }
+
+    .designGridContent p{
         font-size: 9px;
         line-height: 15px;
     }
