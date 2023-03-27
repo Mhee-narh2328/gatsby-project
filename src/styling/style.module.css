@@ -336,6 +336,26 @@ layout{
     color: #FE5E00;
 }
 
+.accordionContainer h5{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 31px;
+    letter-spacing: -0.415px;
+    color: #171718;
+}
+
+.accordionContainer h6{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 31px;
+    letter-spacing: -0.415px;
+    color: #171718;
+}
+
 /* New Accordion code */
 
 
@@ -651,7 +671,7 @@ input[type="radio"] {
 
 @media (max-width: 1024px) {
     section{
-     margin: 0 ;
+     margin: 0 2rem ;
     }
 
     .heroContentGrid p{
@@ -687,7 +707,8 @@ input[type="radio"] {
      padding: 0rem;
  }
  }
- 
+
+
 
  @media (max-width: 765px) {
      html,
@@ -696,9 +717,7 @@ input[type="radio"] {
          width: 100%;
      }
 
-     section{
-         margin: 0 1.5rem;
-     }
+    
 
      .descriptionSection{
         display: grid;
@@ -866,7 +885,7 @@ input[type="radio"] {
      }
 
      .productGridBox{
-         padding: 0rem;
+         padding: 0.5rem;
      }
 
      .productGridBoxImage{
@@ -1012,11 +1031,11 @@ input[type="radio"] {
     } 
 
     .productBoxGrid h5 {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .productBoxGrid h6{
-        font-size: 9px;
+        font-size: 7px;
     }
     .productBoxGrid {
         gap: 0.5rem;
@@ -1041,5 +1060,15 @@ input[type="radio"] {
      .serviceGridContentYellow p{
          font-size: 8px;
      }
+
+     .accordionContainer h5{   
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .accordionContainer h6{
+        font-size: 9px;
+        line-height: 15px;
+    }
     
  }

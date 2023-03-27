@@ -232,10 +232,14 @@ const Home = ({ data }) => {
             <Accordion defaultActiveKey="0" flush variant="outline-light">
               {data?.allContentfulAccordion.nodes.map((node, i) => (
                 <Accordion.Item eventKey={node.accordionId}>
-                  <Accordion.Header><strong>{node.header}</strong></Accordion.Header>
-                  <Accordion.Body>
-                    {node.accordionParagraph.accordionParagraph}
-                  </Accordion.Body>
+                  <Accordion.Header>
+                    <strong>
+                      <h5>{node.header}</h5>
+                    </strong>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                    < h6>{node.accordionParagraph.accordionParagraph}</h6>
+                    </Accordion.Body>
                 </Accordion.Item>
               ))}
             </Accordion>
