@@ -667,6 +667,20 @@ input[type="radio"] {
     margin-right: 5px;
   }
 
+@media (max-width: 1040px) {
+    .productImageGrid{
+        gap: 0.8rem;
+    }
+
+    .designGridContent p{
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .heroContentGrid p{
+        margin-left: -5rem;
+    }
+}
 
 
 @media (max-width: 1024px) {
