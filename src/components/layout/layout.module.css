@@ -78,7 +78,6 @@
 }
 
 
-
 @media (min-width: 769px) {
     .MobileButton{
         display: none;
@@ -177,6 +176,33 @@
     color: #FFFFFF;
     margin-top: 2rem;
 }
+
+@media (min-width: 1920px){
+    .navbar h2{
+        font-size: 33px;
+    }
+
+    .nav ul{
+        padding-left: 50rem;
+    }
+
+    .nav-items{
+        font-size: 20px;
+    }
+
+    .footer p{
+        font-size: 22px;
+    }
+
+    .footer span .icons{
+        font-size: 40px;
+    }
+
+    .footer h6{
+        font-size: 20px;
+    }
+}
+
 
 @media (max-width: 768px) {
     .nav-list{

@@ -682,6 +682,119 @@ input[type="radio"] {
     }
 }
 
+@media (min-width: 1920px){
+    .heroHeader h1{
+        font-size: 120px;
+    }
+
+    .heroContent p{
+        font-size: 22px;
+        margin-top: 30px;
+        padding-bottom: 5rem;
+    }
+
+    .heroContentGrid button{
+        font-size: 20px;
+        height: 60px;
+        width: 150px;
+    }
+
+    .serviceGridContentBlue h4,
+    .serviceGridContentRed h4,
+    .serviceGridContentYellow h4{
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .serviceGridContentBlue p,
+    .serviceGridContentRed p,
+    .serviceGridContentYellow p{
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 0.5rem;
+    }
+
+    .searchInput{
+        width: 150px;
+        height: 70px;
+        font-size: 22px;
+    }
+
+    .searchButton{
+        padding: 1rem 1rem;
+        font-size: 25px;
+    }
+
+    .dropdown .dropdownBtn{
+        font-size: 22px;
+    }
+
+    .dropdown .dropdownContent,
+    .dropdown .dropdownContent span{
+        font-size: 20px;
+    }
+
+    .productGrid{
+        display: grid;
+        grid-template-columns: 0.5fr 2fr;
+    }
+
+    .productImageGrid{
+        gap: 2rem;
+    }
+
+    .productGridBoxImage{
+        margin-left: 14rem;
+    }
+
+    .productGridBox h3{
+        font-size: 22px;
+    }
+
+    .productGridBox p{
+        font-size: 17px;
+    }
+
+    .productBoxGrid{
+        gap: 12rem;
+    }
+
+    .productBoxGrid h5{
+        font-size: 15px;
+    }
+
+    .productBoxGrid h6{
+        font-size: 16px;
+    }
+
+    .productGridButton button{
+        font-size: 20px;
+        width: 200px;
+        padding: 1rem 0;
+    }
+
+    .designGrid{
+        gap: 2rem;
+    }
+
+    .designGridContent h5{
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .designGridContent p{
+        font-size: 22px;
+    }
+
+    .accordionContainer h1{
+        font-size: 60px;
+    }
+
+    .accordionContainer h5{
+        font-size: 19px;
+    }
+}
+
 
 @media (max-width: 1024px) {
     section{
