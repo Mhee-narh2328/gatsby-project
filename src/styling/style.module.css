@@ -795,10 +795,52 @@ input[type="radio"] {
     }
 }
 
+
 @media (min-width: 2560px){
+    .heroHeader h1 {
+        font-size: 150px;
+        line-height: 10rem;
+    }
+
+    .heroContentGrid{
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+        margin: 0 9rem;
+    }
+
+    .heroContent p{
+        font-size: 35px;
+        line-height: 4rem;
+    }
     .heroContentGrid button{
         height: 80px;
         width: 200px;
+    }
+
+    .heroContentArrow {
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+    }
+
+    .productGrid{
+        display: grid;
+        grid-template-columns: 0.4fr 2fr;
+    }
+
+    .productGridBoxImageCon{
+        width: 250px;
+        height: 250px;
+    }
+
+    .productImageGrid{
+        gap: 5rem;
+    }
+
+    .accordionContainer h5 {
+        font-size: 22px;
+    }
+
+    .accordionContainer h6{
+        font-size: 18px;
     }
 
     .searchInput{

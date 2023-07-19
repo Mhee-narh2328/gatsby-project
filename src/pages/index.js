@@ -54,10 +54,10 @@ const Home = ({ data }) => {
         </div>
         <div className={indexStyles.heroGrid}>
           <div>
-            <StaticImage alt='logo' src='../images/Group 10152.png' />
+            <StaticImage alt='logo' src='../images/Group 10152.png'  className={indexStyles.heroGridImage} />
           </div>
           <div className={indexStyles.heroContent}>
-            <p>We are the best furnitures platform. We are already working on thousands of <br /> future home projects. Trust us, you will surely be satisfied.</p>
+            <p>We are the best furniture platform. We are already working on thousands of <br /> future home projects. Trust us, you will surely be satisfied.</p>
             <div className={indexStyles.heroContentGrid}>
               <StaticImage alt='logo' src='../images/vector.png' className={indexStyles.heroContentImage} />
               <button>Shop Now</button>
@@ -65,7 +65,7 @@ const Home = ({ data }) => {
             </div>
           </div>
           <div>
-            <StaticImage alt='' src='../images/Group 10151.png' />
+            <StaticImage alt='' src='../images/Group 10151.png' className={indexStyles.heroGridImage} />
           </div>
 
         </div>
