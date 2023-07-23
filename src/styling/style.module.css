@@ -750,7 +750,8 @@ input[type="radio"] {
     }
 
     .productImageGrid{
-        gap: 2rem;
+        row-gap: 6rem;
+        column-gap: 4rem;
     }
 
     .productGridBoxImage{
