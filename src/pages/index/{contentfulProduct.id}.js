@@ -143,6 +143,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                         className="mySwiper"
                         spaceBetween={30}
                         loop={"true"}
+                   
                         navigation
                         modules={[Navigation]}
                         slidesPerView={4}

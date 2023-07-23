@@ -178,7 +178,8 @@ section{
 .productImageGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
+    row-gap: 6rem;
+    column-gap: 4rem;
 }
 section{
     background-color: #fafafa;
