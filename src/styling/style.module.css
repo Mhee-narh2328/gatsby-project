@@ -170,6 +170,7 @@ section{
 
 
 .productGrid{
+    margin-top: 5rem;
     display: grid;
     grid-template-columns: 0.5fr 1fr;
 }
@@ -374,7 +375,7 @@ layout{
     width: 100px;
     outline: none;
     border: none;
-    height: 40px;
+    height: 36px;
     margin: 2rem 0;
     padding: 0.2rem 1rem;
 }
@@ -517,7 +518,7 @@ layout{
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 160%;
     color: #171718;
     margin-bottom: 2rem;
@@ -636,6 +637,7 @@ layout{
     box-shadow:0px 4px 4px rgba(255, 255, 255, 0.25);
     border-radius: 20px;
     padding: 1rem;
+    margin: 3rem 0 7rem 0;
 }
 
 .similarProducts h3{
@@ -661,7 +663,13 @@ layout{
     margin-bottom: 1rem;
 }
 .similarProductsSection h2{
-    margin:2rem 0;
+    margin-top:4rem;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 160%;
+    color: #171718;
 }
 input[type="radio"] {
     margin-right: 5px;
@@ -737,6 +745,7 @@ input[type="radio"] {
     .productGrid{
         display: grid;
         grid-template-columns: 0.5fr 2fr;
+        margin-top: 7rem;
     }
 
     .productImageGrid{
