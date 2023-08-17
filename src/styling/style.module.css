@@ -599,6 +599,10 @@ layout{
     opacity: 0.8;
 }
 
+.dropdown .dropdownBtn:hover{
+    color: #FE5E00;
+}
+
 .dropdown .dropdownBtn span{
     font-size: 30px;
     margin-left: 2rem;
@@ -883,7 +887,7 @@ input[type="radio"] {
     }
 
     .dropdown .dropdownBtn{
-        font-size: 26px;
+        font-size: 25px;
     }
 
     .dropdown .dropdownContent span{
