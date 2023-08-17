@@ -135,6 +135,18 @@
     
 } */
 
+.builtby,
+.builtby a{
+    color: white;
+    text-decoration: none;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.builtbyImage{
+    width: 90px;
+    margin: 0.2rem 1rem ;
+}
 .footer{
     background-color: #191D1E;
     margin-top: 2rem;

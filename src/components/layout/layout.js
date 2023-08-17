@@ -8,6 +8,8 @@ import{navbar,
         navItems,
         icons,
         mobileLogo,
+        builtby,
+        builtbyImage,
         footer} from'./layout.module.css'
 import { StaticImage } from "gatsby-plugin-image"
 import {AiOutlineInstagram}  from "react-icons/ai"
@@ -61,7 +63,19 @@ export default function Layout({pageTitle, children}) {
             <span><HiOutlinePhone className={icons}/></span>
           </div>
           <h6>Copyright Murpelmodenfurniture (c)2022</h6>
+          <div className={builtby} >
+                © {new Date().getFullYear()}, Built with
+                {` `}
+                <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">Gatsby</a> x
+                <a href="https://www.contentful.com" target="_blank" rel="noreferrer">
+                    <StaticImage
+                        alt='logo'
+                        src='../../images/contenful.webp'
+                        className={builtbyImage}
+                    /></a>
+            </div>
         </div>
+        
       </footer>
     </div>
   )
