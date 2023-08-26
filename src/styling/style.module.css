@@ -9,9 +9,6 @@ section{
     margin: 0 4rem;
 }
 
-.filter{
-    display: none;
-}
 .heroHeader h1{
     font-family: 'Lalezar';
     font-style: normal;
@@ -436,6 +433,10 @@ layout{
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
+.searchFilter{
+    display: none;
+}
+
 
 }
 
@@ -977,6 +978,9 @@ input[type="radio"] {
      .searchButton{
         display: none;
      }
+     .dropdown{
+        display: none;
+    }
 
     
 
