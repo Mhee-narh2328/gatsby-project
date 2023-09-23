@@ -1,6 +1,6 @@
 import React from "react"
 import MobileMenu from "./MobileMenu";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import{navbar,
         nav,
         container,

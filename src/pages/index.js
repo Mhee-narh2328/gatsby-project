@@ -1,16 +1,18 @@
 
-import React, { useState } from "react"
+import React, { Component, useState } from "react"
 import * as indexStyles from '../styling/style.module.css'
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout/layout"
+import Sidebar from "../components/sidebar/Sidebar";
+
 // import Dropdown from 'react-bootstrap/Dropdown';
 // import DropdownButton from 'react-bootstrap/DropdownButton';
 import Accordion from 'react-bootstrap/Accordion';
-import { AiOutlineSearch } from "react-icons/ai";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-// import { BsBuilding } from "react-icons/bs";
+// import { AiOutlineSearch } from "react-icons/ai";
+// import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+// // import { BsBuilding } from "react-icons/bs";
 
-import { BsArrowRight } from "react-icons/bs"
+// import { BsArrowRight,BsFillFilterCircleFill,BsFillArrowLeftCircleFill } from "react-icons/bs"
 import { StaticImage } from "gatsby-plugin-image"
 
 // react Bootstrap Confirguration
@@ -19,32 +21,11 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 
 import Seo from '../components/seo'
 
-// import { renderRichText } from 'gatsby-source-contentful/rich-text'
-// import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
-
-// const options = {
-//   renderMark: {
-//     [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
-//   },
-//   renderNode: {
-//     [INLINES.HYPERLINK]: (node, children) => {
-//       const { uri } = node.data
-//       return (
-//         <a href={uri} className="underline">
-//           {children}
-//         </a>
-//       )
-//     },
-//     [BLOCKS.HEADING_2]: (node, children) => {
-//       return <h2>{children}</h2>
-//     },
-//   },
-// }
 
 const Home = ({ data }) => {
-  const [category, setCategory] = useState(null)
-  const [priceFilter, setPriceFilter] = useState(null)
-  const [isActive, SetIsActive] = useState(false)
+  // const [category, setCategory] = useState(null)
+  // const [priceFilter, setPriceFilter] = useState(null)
+  // const [isActive, SetIsActive] = useState(false)
 
   return (
     <Layout>
@@ -94,126 +75,7 @@ const Home = ({ data }) => {
         </div>
       </section>
       <section>
-        <div className={indexStyles.productGrid}>
-          <div>
-            <div>
-              <form>
-                <input type="text" placeholder="Search.." name="search" className={indexStyles.searchInput} />
-                <button type="submit"  className={indexStyles.searchButton}><AiOutlineSearch />
-                </button>
-                <button type="submit"  className={indexStyles.searchFilter}><StaticImage src= '../images/filter.png' className={indexStyles.filter}></StaticImage></button>
-              </form>
-            </div>
-            <div className={indexStyles.dropdown}>
-              <div className={indexStyles.dropdownBtn} onClick={(e) =>
-                SetIsActive(!isActive)} >Categories
-                <span><MdOutlineKeyboardArrowDown /></span>
-              </div>
-              {isActive && (
-                <div className={indexStyles.dropdownContent}>
-                  <div className={indexStyles.dropdownItem}>
-                    <div>
-                      <StaticImage alt='logo' src='../images/home.png' className={indexStyles.dropdownImage} />
-                    </div>
-                    <span onClick={() => setCategory('All')}>All</span>
-                  </div>
-                  {data?.allContentfulCategory.nodes.map((node, i) => (
-                    <div className={indexStyles.dropdownItem}>
-                      <div>
-                        <img alt='logo' src={node?.categoryImage.url} className={indexStyles.dropdownImage} />
-                      </div>
-                      <span key={node?.id}
-                        onClick={() => setCategory(node?.categoryName)}
-                      >
-                        {node?.categoryName}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div className={indexStyles.dropdown}>
-              <div className={indexStyles.dropdownBtn} onClick={(e) =>
-                SetIsActive(!isActive)}>Price
-                <span><MdOutlineKeyboardArrowDown /></span>
-              </div>
-              {isActive && (
-                <div className={indexStyles.dropdownContent}>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
-                    All
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(1)} />
-                    Under 50,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(2)} />
-                    50,000-100,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(3)} />
-                    100,000-150,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(4)} />
-                    150,000-200,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(5)} />
-                    200,000-250,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(6)} />
-                    Over 250,000
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-          <div>
-            <div className={indexStyles.productImageGrid}>
-              {data?.allContentfulProduct.nodes.filter((node) => {
-                if (category === null || category === 'All') {
-                  return node
-                } else if (node?.category[0].categoryName.toLowerCase().includes(category.toLowerCase())) {
-                  return node
-                }
-                return false
-              }).filter((node) => {
-                if (priceFilter === null) {
-                  return node
-                } else {
-                  const minPrice = (priceFilter - 1) * 50000 + 1
-                  const maxPrice = priceFilter * 50000
-                  return node.productPrice >= minPrice && node.productPrice <= maxPrice
-                } 
-              }).map((node, i) => (
-                <div key={node?.id}>
-                  <div className={indexStyles.productGridBox}>
-                    <div className={indexStyles.productGridBoxImageCon}>
-                      <img
-                        alt='productImage'
-                        src={node?.productImage1.url}
-                        className={indexStyles.productGridBoxImage}
-                      />
-                    </div>
-                    <h3 key={node.productName}>{node.productName}</h3>
-                    <p key={node.productParagraph}>{node.productParagraph}</p>
-                    <div className={indexStyles.productBoxGrid}>
-                      <h5 key={node.productPrice}>#{node.productPrice}</h5>
-                      <Link to={`/index/${node.id}`}><h6>BUY NOW <span><BsArrowRight /></span></h6></Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className={indexStyles.productGridButton}>
-              <Link to="/shop"><button>View more</button></Link>
-            </div>
-          </div>
-
-        </div>
+        <Sidebar />
       </section>
       <section>
         <div className={indexStyles.designGrid}>
@@ -250,6 +112,7 @@ const Home = ({ data }) => {
       </section>
     </Layout>
   );
+
 }
 export const query = graphql`
 query Homepage {
