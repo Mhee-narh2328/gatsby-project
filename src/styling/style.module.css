@@ -170,18 +170,18 @@ section{
 }
 
 
-/* .productGrid{
+.productGrid{
     margin-top: 5rem;
     display: grid;
     grid-template-columns: 0.5fr 1fr;
-} */
+}
 
-/* .productImageGrid{
+.productImageGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 6rem;
     column-gap: 4rem;
-} */
+}
 section{
     background-color: #fafafa;
 }
@@ -190,7 +190,7 @@ section{
 layout{
     background: #fafafa;
 }
-/* .productGridBox{
+.productGridBox{
     background: #ffff;
     box-shadow:0px 4px 4px rgba(255, 255, 255, 0.25);
     border-radius: 20px;
@@ -288,7 +288,7 @@ layout{
     display: flex;
     align-items: center;
     justify-content: center;
-} */
+}
 
 .designGrid{
     display: grid;

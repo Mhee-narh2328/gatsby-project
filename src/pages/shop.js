@@ -29,7 +29,6 @@ const Shopping = ({data}) =>{
                 <input type="text" placeholder="Search.." name="search" className={shoppingStyles.searchInput}/>
                 <button type="submit" className={shoppingStyles.searchButton}><AiOutlineSearch/></button>
                 <button type="submit"  className={shoppingStyles.searchFilter}><StaticImage src= '../images/filter.png' className={shoppingStyles.filter}></StaticImage></button>
-                <button type="submit"  className={shoppingStyles.searchArrow}><StaticImage src= '../images/close.png' className={shoppingStyles.arrow}></StaticImage></button>
               </form>
             </div>
             <div className= {shoppingStyles.dropdown}>
