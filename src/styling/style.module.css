@@ -9,6 +9,7 @@ section{
     margin: 0 4rem;
 }
 
+
 .heroHeader h1{
     font-family: 'Lalezar';
     font-style: normal;
@@ -41,6 +42,9 @@ section{
     margin-top: 2rem;
 }
 
+.searchForm{
+    display: flex;
+}
 
 .heroContentGrid{
     display: grid;
@@ -969,7 +973,7 @@ input[type="radio"] {
 
 
 
- @media (max-width: 765px) {
+ @media (max-width: 768px) {
      html,
      body{
          height: 100%;

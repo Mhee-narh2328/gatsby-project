@@ -2,13 +2,10 @@ import React, { useState } from "react"
 import * as indexStyles from '../styling/style.module.css'
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout/layout"
-// import Dropdown from 'react-bootstrap/Dropdown';
-// import DropdownButton from 'react-bootstrap/DropdownButton';
 import Accordion from 'react-bootstrap/Accordion';
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-// import { BsBuilding } from "react-icons/bs";
-
+import MobileSidebar from "../components/sidebar/Sidebar";
 import { BsArrowRight } from "react-icons/bs"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -22,6 +19,14 @@ const Home = ({ data }) => {
   const [category, setCategory] = useState(null)
   const [priceFilter, setPriceFilter] = useState(null)
   const [isActive, SetIsActive] = useState(false)
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // Function to toggle the sidebar visibility
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
 
   return (
     <Layout>
@@ -73,13 +78,13 @@ const Home = ({ data }) => {
       <section>
         <div className={indexStyles.productGrid}>
           <div>
-            <div>
+            <div className={indexStyles.searchForm}>
               <form>
                 <input type="text" placeholder="Search.." name="search" className={indexStyles.searchInput} />
                 <button type="submit"  className={indexStyles.searchButton}><AiOutlineSearch />
                 </button>
-                <button type="submit"  className={indexStyles.searchFilter}><StaticImage src= '../images/filter.png' className={indexStyles.filter}></StaticImage></button>
               </form>
+              <MobileSidebar />
             </div>
             <div className={indexStyles.dropdown}>
               <div className={indexStyles.dropdownBtn} onClick={(e) =>
