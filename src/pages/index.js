@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import Accordion from 'react-bootstrap/Accordion';
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import MobileSidebar from "../components/sidebar/sidebar";
+import MobileSidebar from "../components/sidebar/Sidebar";
 import { BsArrowRight } from "react-icons/bs"
 import { StaticImage } from "gatsby-plugin-image"
 

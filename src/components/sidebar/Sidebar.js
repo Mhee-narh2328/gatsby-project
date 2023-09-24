@@ -1,7 +1,7 @@
 // src/components/MobileSidebar.js
 import React, { useState } from 'react';
 import { Link, graphql } from "gatsby"
-import './sidebar.css';
+import './Sidebar.css';
 import { StaticImage } from "gatsby-plugin-image"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs"
