@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import Accordion from 'react-bootstrap/Accordion';
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import MobileSidebar from "../components/sidebar/Sidebar";
+import MobileSidebar from "../components/sidebar/sidebar";
 import { BsArrowRight } from "react-icons/bs"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -20,12 +20,12 @@ const Home = ({ data }) => {
   const [priceFilter, setPriceFilter] = useState(null)
   const [isActive, SetIsActive] = useState(false)
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Function to toggle the sidebar visibility
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  // // Function to toggle the sidebar visibility
+  // const toggleSidebar = () => {
+  //   setIsSidebarOpen(!isSidebarOpen);
+  // };
 
 
   return (
@@ -47,7 +47,7 @@ const Home = ({ data }) => {
             </div>
           </div>
           <div>
-            <StaticImage alt='' src='../images/Group 10151.png' className={indexStyles.heroGridImage} />
+            <StaticImage alt='hero' src='../images/Group 10151.png' className={indexStyles.heroGridImage} />
           </div>
 
         </div>
@@ -153,6 +153,7 @@ const Home = ({ data }) => {
               )}
             </div>
           </div>
+
           <div>
             <div className={indexStyles.productImageGrid}>
               {data?.allContentfulProduct.nodes.filter((node) => {
@@ -200,7 +201,7 @@ const Home = ({ data }) => {
       <section>
         <div className={indexStyles.designGrid}>
           <div>
-            <StaticImage src='../images/Group 35260.png' />
+            <StaticImage src='../images/Group 35260.png' alt="design" />
           </div>
           <div className={indexStyles.designGridContent}>
             <h5>Designing Modern, Unique & <span>Smart Furniture</span> </h5>

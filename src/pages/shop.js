@@ -1,5 +1,6 @@
 import React,{useState} from "react"
 import * as shoppingStyles from '../styling/style.module.css'
+import MobileSidebar from "../components/sidebar/sidebar";
 import Layout from "../components/layout/layout"
 import { Link , graphql} from "gatsby"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
@@ -23,14 +24,14 @@ const Shopping = ({data}) =>{
       <Layout>
         <section>
         <div className={shoppingStyles.productGrid}>
-        <div>
-            <div>
+        <div> 
+            <div className={shoppingStyles.searchForm}>
               <form>
                 <input type="text" placeholder="Search.." name="search" className={shoppingStyles.searchInput}/>
                 <button type="submit" className={shoppingStyles.searchButton}><AiOutlineSearch/></button>
-                <button type="submit"  className={shoppingStyles.searchFilter}><StaticImage src= '../images/filter.png' className={shoppingStyles.filter}></StaticImage></button>
-                <button type="submit"  className={shoppingStyles.searchArrow}><StaticImage src= '../images/close.png' className={shoppingStyles.arrow}></StaticImage></button>
+                {/* <button type="submit"  className={shoppingStyles.searchArrow}><StaticImage src= '../images/close.png' className={shoppingStyles.arrow} alt="close"/></button> */}
               </form>
+              <MobileSidebar />
             </div>
             <div className= {shoppingStyles.dropdown}>
                   <div className={shoppingStyles.dropdownBtn} onClick ={(e) =>
