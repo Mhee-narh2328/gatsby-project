@@ -1,10 +1,9 @@
-/* src/components/MobileSidebar.css
 .sidebar {
     width: 0;
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.3s;
@@ -35,10 +34,10 @@
     display: none;
     margin-top: 2rem;
   }
-
+  
   .dropdown{
     width: 200px;
-
+    /* margin: 100px auto; */
     user-select: none;
     position: relative;
     display: block;
@@ -68,7 +67,7 @@
     position: relative;
     top: 110%;
     left: 0;
-
+    /* background: #fff; */
   }
   .dropdown .dropdown-content,
   .dropdown .dropdown-content span{
@@ -79,19 +78,19 @@
     color: rgba(23, 23, 24, 0.6);
   
   }
-.dropimage{
+  .dropimage{
   width: 20px;
-}
-
-.dropdown .dropdown-content,
-.dropdown .dropdown-content span{
+  }
+  
+  .dropdown .dropdown-content,
+  .dropdown .dropdown-content span{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
     color: rgba(23, 23, 24, 0.6);
-
-}
+  
+  }
   
   
   .dropdown .dropdown-content .dropdown-item{
@@ -113,9 +112,9 @@
   }
   
   
-
+  
   @media (max-width: 768px) {
     .mobile-menu-icon{
       display: block;
     }
-  } */
+  }

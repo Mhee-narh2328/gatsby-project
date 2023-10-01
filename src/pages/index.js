@@ -5,21 +5,29 @@ import Layout from "../components/layout/layout"
 import Accordion from 'react-bootstrap/Accordion';
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import MobileSidebar from "../components/sidebar/Sidebar";
+// import MobileSidebar from "../components/sidebar/Sidebar";
 import { BsArrowRight } from "react-icons/bs"
 import { StaticImage } from "gatsby-plugin-image"
 
 // react Bootstrap Confirguration
 import "../../node_modules/react-bootstrap/dist/react-bootstrap";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-
+import '../styling/sidebar.css'
 import Seo from '../components/seo'
 
 const Home = ({ data }) => {
   const [category, setCategory] = useState(null)
   const [priceFilter, setPriceFilter] = useState(null)
   const [isActive, SetIsActive] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
   // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // // Function to toggle the sidebar visibility
@@ -83,74 +91,154 @@ const Home = ({ data }) => {
                 <input type="text" placeholder="Search.." name="search" className={indexStyles.searchInput} />
                 <button type="submit"  className={indexStyles.searchButton}><AiOutlineSearch />
                 </button>
+                
               </form>
-              <MobileSidebar />
+              <div className="mobile-menu-icon" onClick={toggleSidebar}>
+                  <StaticImage src= '../images/filter.png' alt='menu'/>
+                </div>
+              {/* <MobileSidebar /> */}
             </div>
-            <div className={indexStyles.dropdown}>
-              <div className={indexStyles.dropdownBtn} onClick={(e) =>
-                SetIsActive(!isActive)} >Categories
-                <span><MdOutlineKeyboardArrowDown /></span>
-              </div>
-              {isActive && (
-                <div className={indexStyles.dropdownContent}>
-                  <div className={indexStyles.dropdownItem}>
-                    <div>
-                      <StaticImage alt='logo' src='../images/home.png' className={indexStyles.dropdownImage} />
-                    </div>
-                    <span onClick={() => setCategory('All')}>All</span>
-                  </div>
-                  {data?.allContentfulCategory.nodes.map((node, i) => (
+            <div className={indexStyles.main}>
+              <div className={indexStyles.dropdown}>
+                <div className={indexStyles.dropdownBtn} onClick={(e) =>
+                  SetIsActive(!isActive)} >Categories
+                  <span><MdOutlineKeyboardArrowDown /></span>
+                </div>
+                {isActive && (
+                  <div className={indexStyles.dropdownContent}>
                     <div className={indexStyles.dropdownItem}>
                       <div>
-                        <img alt='logo' src={node?.categoryImage.url} className={indexStyles.dropdownImage} />
+                        <StaticImage alt='logo' src='../images/home.png' className={indexStyles.dropdownImage} />
                       </div>
-                      <span key={node?.id}
-                        onClick={() => setCategory(node?.categoryName)}
-                      >
-                        {node?.categoryName}
-                      </span>
+                      <span onClick={() => setCategory('All')}>All</span>
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div className={indexStyles.dropdown}>
-              <div className={indexStyles.dropdownBtn} onClick={(e) =>
-                SetIsActive(!isActive)}>Price
-                <span><MdOutlineKeyboardArrowDown /></span>
+                    {data?.allContentfulCategory.nodes.map((node, i) => (
+                      <div className={indexStyles.dropdownItem}>
+                        <div>
+                          <img alt='logo' src={node?.categoryImage.url} className={indexStyles.dropdownImage} />
+                        </div>
+                        <span key={node?.id}
+                          onClick={() => setCategory(node?.categoryName)}
+                        >
+                          {node?.categoryName}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-              {isActive && (
-                <div className={indexStyles.dropdownContent}>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
-                    All
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(1)} />
-                    Under 50,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(2)} />
-                    50,000-100,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(3)} />
-                    100,000-150,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(4)} />
-                    150,000-200,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(5)} />
-                    200,000-250,000
-                  </div>
-                  <div className={indexStyles.dropdownItem}>
-                    <input type="radio" name="priceFilter" onClick={() => setPriceFilter(6)} />
-                    Over 250,000
-                  </div>
+              <div className={indexStyles.dropdown}>
+                <div className={indexStyles.dropdownBtn} onClick={(e) =>
+                  SetIsActive(!isActive)}>Price
+                  <span><MdOutlineKeyboardArrowDown /></span>
                 </div>
-              )}
+                {isActive && (
+                  <div className={indexStyles.dropdownContent}>
+                    <div className={indexStyles.dropdownItem}>
+                      <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
+                      All
+                    </div>
+                    <div className={indexStyles.dropdownItem}>
+                      <input type="radio" name="priceFilter" onClick={() => setPriceFilter(1)} />
+                      Under 50,000
+                    </div>
+                    <div className={indexStyles.dropdownItem}>
+                      <input type="radio" name="priceFilter" onClick={() => setPriceFilter(2)} />
+                      50,000-100,000
+                    </div>
+                    <div className={indexStyles.dropdownItem}>
+                      <input type="radio" name="priceFilter" onClick={() => setPriceFilter(3)} />
+                      100,000-150,000
+                    </div>
+                    <div className={indexStyles.dropdownItem}>
+                      <input type="radio" name="priceFilter" onClick={() => setPriceFilter(4)} />
+                      150,000-200,000
+                    </div>
+                    <div className={indexStyles.dropdownItem}>
+                      <input type="radio" name="priceFilter" onClick={() => setPriceFilter(5)} />
+                      200,000-250,000
+                    </div>
+                    <div className={indexStyles.dropdownItem}>
+                      <input type="radio" name="priceFilter" onClick={() => setPriceFilter(6)} />
+                      Over 250,000
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div>
+                <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                  <button type="submit" onClick={closeSidebar} className={indexStyles.searchArrow}><StaticImage src= '../images/close.png' className={indexStyles.arrow} alt="close"/></button>
+                  <div className="dropdown">
+                      <div className="dropdown-btn" onClick={(e) =>
+                        SetIsActive(!isActive)}>Categories
+                        <span><MdOutlineKeyboardArrowDown /></span>
+                      </div>
+                      {isActive && (
+                        <div className="dropdown-content">
+                          <div className="dropdown-item">
+                            <div>
+                              <StaticImage alt='logo' src='../images/home.png' className={indexStyles.dropdownImage} />
+                            </div>
+                            <span onClick={() => setCategory('All')}>All</span>
+                          </div>
+                          {data?.allContentfulCategory.nodes.map((node, i) => (
+                          <div className="dropdown-item">
+                            <div>
+                              <img alt='logo' src={node?.categoryImage.url} className="dropimage" />
+                            </div>
+                            <span key={node?.id}
+                              onClick={() => setCategory(node?.categoryName)}
+                            >
+                              {node?.categoryName}
+                            </span>
+                      </div>
+                    ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="dropdown">
+                      <div className="dropdown-btn" onClick={(e) =>
+                        SetIsActive(!isActive)}>Price
+                        <span><MdOutlineKeyboardArrowDown /></span>
+                      </div>
+                      {isActive && (
+                        <div className="dropdown-content">
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
+                            All
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(1)} />
+                            Under 50,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(2)} />
+                            50,000-100,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(3)} />
+                            100,000-150,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(4)} />
+                            150,000-200,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(5)} />
+                            200,000-250,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(6)} />
+                            Over 250,000
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                {/* <div className="mobile-menu-icon" onClick={toggleSidebar}>
+                  <StaticImage src= '../../images/filter.png' alt='menu'/>
+                </div> */}
             </div>
           </div>
 

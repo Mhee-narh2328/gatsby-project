@@ -5,6 +5,7 @@
     border: 0;
 }
 
+
 section{
     margin: 0 4rem;
 }
@@ -1149,6 +1150,7 @@ input[type="radio"] {
 
      .productGrid{
          display: block;
+         margin-top: 6rem;
      }
 
      .productImageGrid{

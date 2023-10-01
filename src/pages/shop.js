@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import * as shoppingStyles from '../styling/style.module.css'
-import MobileSidebar from "../components/sidebar/Sidebar";
+// import MobileSidebar from "../components/sidebar/Sidebar";
 import Layout from "../components/layout/layout"
 import { Link , graphql} from "gatsby"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
@@ -13,6 +13,7 @@ import { StaticImage } from "gatsby-plugin-image"
 // react Bootstrap Confirguration
 import "../../node_modules/react-bootstrap/dist/react-bootstrap";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+import '../styling/sidebar.css'
 
 import Seo from '../components/seo'
 
@@ -20,6 +21,15 @@ const Shopping = ({data}) =>{
     const [category, setCategory] = useState(null)
     const [priceFilter, setPriceFilter] = useState(null)
     const [isActive, SetIsActive] = useState(false)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+      setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    const closeSidebar = () => {
+      setIsSidebarOpen(false);
+    };
     return (
       <Layout>
         <section>
@@ -29,47 +39,48 @@ const Shopping = ({data}) =>{
               <form>
                 <input type="text" placeholder="Search.." name="search" className={shoppingStyles.searchInput}/>
                 <button type="submit" className={shoppingStyles.searchButton}><AiOutlineSearch/></button>
-                {/* <button type="submit"  className={shoppingStyles.searchArrow}><StaticImage src= '../images/close.png' className={shoppingStyles.arrow} alt="close"/></button> */}
               </form>
-              <MobileSidebar />
+              <div className="mobile-menu-icon" onClick={toggleSidebar}>
+                <StaticImage src= '../images/filter.png' alt='menu'/>
+              </div>
+              {/* <MobileSidebar /> */}
             </div>
-            <div className= {shoppingStyles.dropdown}>
-                  <div className={shoppingStyles.dropdownBtn} onClick ={(e) =>
-                  SetIsActive(!isActive)}>Categories
-                  <span><MdOutlineKeyboardArrowDown/></span>
-                  </div>
-                  {isActive && (
-                      <div className={shoppingStyles.dropdownContent}>
-                        <div className={shoppingStyles.dropdownItem}>
-                          <div>
-                            <StaticImage alt='logo' src= '../images/home.png' className= {shoppingStyles.dropdownImage}/>
-                          </div>
-                          <span onClick={ () => setCategory('All') }>All</span>
-                        </div>
-                        { data?.allContentfulCategory.nodes.map((node, i) => (
-                          <div className={shoppingStyles.dropdownItem}>
-                          <div>
-                          <img alt='logo' src={ node?.categoryImage.url } className= {shoppingStyles.dropdownImage}/>
-                          </div>
-                          <span  key={ node?.id } 
-                           onClick={ () => setCategory(node?.categoryName) } 
-                           >
-                            { node?.categoryName }
-                          </span>
-                          </div>
-                        ))}
-                          
+            <div className={shoppingStyles.main}>
+              <div className={shoppingStyles.dropdown}>
+                <div className={shoppingStyles.dropdownBtn} onClick={(e) =>
+                  SetIsActive(!isActive)} >Categories
+                  <span><MdOutlineKeyboardArrowDown /></span>
+                </div>
+                {isActive && (
+                  <div className={shoppingStyles.dropdownContent}>
+                    <div className={shoppingStyles.dropdownItem}>
+                      <div>
+                        <StaticImage alt='logo' src='../images/home.png' className={shoppingStyles.dropdownImage} />
                       </div>
-                  )}
-            </div>
-
-            <div className= {shoppingStyles.dropdown}>
-                  <div className={shoppingStyles.dropdownBtn} onClick ={(e) =>
-                  SetIsActive(!isActive)}>Price
-                  <span><MdOutlineKeyboardArrowDown/></span>
+                      <span onClick={() => setCategory('All')}>All</span>
+                    </div>
+                    {data?.allContentfulCategory.nodes.map((node, i) => (
+                      <div className={shoppingStyles.dropdownItem}>
+                        <div>
+                          <img alt='logo' src={node?.categoryImage.url} className={shoppingStyles.dropdownImage} />
+                        </div>
+                        <span key={node?.id}
+                          onClick={() => setCategory(node?.categoryName)}
+                        >
+                          {node?.categoryName}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                  {isActive && (
-                    <div className={shoppingStyles.dropdownContent}>
+                )}
+              </div>
+              <div className={shoppingStyles.dropdown}>
+                <div className={shoppingStyles.dropdownBtn} onClick={(e) =>
+                  SetIsActive(!isActive)}>Price
+                  <span><MdOutlineKeyboardArrowDown /></span>
+                </div>
+                {isActive && (
+                  <div className={shoppingStyles.dropdownContent}>
                     <div className={shoppingStyles.dropdownItem}>
                       <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
                       All
@@ -99,7 +110,82 @@ const Shopping = ({data}) =>{
                       Over 250,000
                     </div>
                   </div>
-                  )}
+                )}
+              </div>
+            </div>
+            <div>
+                <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                  <button type="submit" onClick={closeSidebar} className={shoppingStyles.searchArrow}><StaticImage src= '../images/close.png' className={shoppingStyles.arrow} alt="close"/></button>
+                  <div className="dropdown">
+                      <div className="dropdown-btn" onClick={(e) =>
+                        SetIsActive(!isActive)}>Categories
+                        <span><MdOutlineKeyboardArrowDown /></span>
+                      </div>
+                      {isActive && (
+                        <div className="dropdown-content">
+                          <div className="dropdown-item">
+                            <div>
+                              <StaticImage alt='logo' src='../images/home.png' className={shoppingStyles.dropdownImage} />
+                            </div>
+                            <span onClick={() => setCategory('All')}>All</span>
+                          </div>
+                          {data?.allContentfulCategory.nodes.map((node, i) => (
+                          <div className="dropdown-item">
+                            <div>
+                              <img alt='logo' src={node?.categoryImage.url} className="dropimage" />
+                            </div>
+                            <span key={node?.id}
+                              onClick={() => setCategory(node?.categoryName)}
+                            >
+                              {node?.categoryName}
+                            </span>
+                      </div>
+                    ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="dropdown">
+                      <div className="dropdown-btn" onClick={(e) =>
+                        SetIsActive(!isActive)}>Price
+                        <span><MdOutlineKeyboardArrowDown /></span>
+                      </div>
+                      {isActive && (
+                        <div className="dropdown-content">
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
+                            All
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(1)} />
+                            Under 50,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(2)} />
+                            50,000-100,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(3)} />
+                            100,000-150,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(4)} />
+                            150,000-200,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(5)} />
+                            200,000-250,000
+                          </div>
+                          <div className="dropdown-item">
+                            <input type="radio" name="priceFilter" onClick={() => setPriceFilter(6)} />
+                            Over 250,000
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                {/* <div className="mobile-menu-icon" onClick={toggleSidebar}>
+                  <StaticImage src= '../../images/filter.png' alt='menu'/>
+                </div> */}
             </div>
           </div>
           <div>
