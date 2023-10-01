@@ -10,6 +10,16 @@ section{
     margin: 0 4rem;
 }
 
+.searchArrow{
+    background-color: #fff;
+}
+
+.arrow{
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+}
+
 
 .heroHeader h1{
     font-family: 'Lalezar';
