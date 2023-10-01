@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import * as shoppingStyles from '../styling/style.module.css'
-// import MobileSidebar from "../components/sidebar/Sidebar";
+
 import Layout from "../components/layout/layout"
 import { Link , graphql} from "gatsby"
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
