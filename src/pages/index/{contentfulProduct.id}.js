@@ -73,7 +73,7 @@ const [productDetails, setProductDetails] = useState({
                         <h1>{props.data.contentfulProduct.productName}</h1>
                         <p>{props.data.contentfulProduct.productParagraph}</p>
                         <h4>#{props.data.contentfulProduct.productPrice}</h4>
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={descriptionStyles.contactButton}>Contact Seller</button>
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={descriptionStyles.contactButtonn}>Contact Seller</button>
                         {isMenuOpen && (
                         <div
                             className={descriptionStyles.descriptionContainerContentImages}
@@ -167,17 +167,18 @@ const [productDetails, setProductDetails] = useState({
                     <div className={descriptionStyles.mobileContent}>
                         <p>{renderRichText(props.data.contentfulProduct.productDescription, options)}</p>
                     </div>
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)}>Contact Seller</button>
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={descriptionStyles.contactButton}>Contact Seller</button>
                         {isMenuOpen && (
                         <div
                             className={descriptionStyles.descriptionContainerContentImages}
                         >
-                            <Link to="https://wa.link/chnxm1" target="_blank">
+                            <button onClick={openWhatsApp}>
+
                                 <StaticImage
                                     src="../../images/whatsapp.png"
                                     className={descriptionStyles.descriptionContainerContentImage}
                                 />
-                            </Link>
+                            </button>
 
                             <Link to="https://ig.me/m/murpelmodernfurniture" target="_blank">
                                 <StaticImage

@@ -476,7 +476,7 @@ layout{
     font-weight: 400;
 }
 
-.mobile button{
+.contactButton{
     background: #FE5E00;
     border-radius: 8px;
     font-family: 'DM Sans';
@@ -559,8 +559,7 @@ layout{
 }
 
 
-.contactButton button,
-.contactButton{
+.contactButtonn{
     background: #FE5E00;
     border-radius: 8px;
     font-family: 'DM Sans';

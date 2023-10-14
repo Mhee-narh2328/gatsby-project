@@ -21,6 +21,7 @@ const Home = ({ data }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCategoryActive, setIsCategoryActive] = useState(false);
   const [isPriceActive, setIsPriceActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -36,6 +37,10 @@ const Home = ({ data }) => {
 
   const openPriceDropdown = () => {
     setIsPriceActive(!isPriceActive);
+  };
+
+  const handleSearchInputChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
@@ -90,7 +95,7 @@ const Home = ({ data }) => {
           <div>
             <div className={indexStyles.searchForm}>
               <form>
-                <input type="text" placeholder="Search.." name="search" className={indexStyles.searchInput} />
+                <input type="text" placeholder="Search.." name="search" className={indexStyles.searchInput} value={searchQuery} onChange={handleSearchInputChange} />
                 <button type="submit"  className={indexStyles.searchButton}><AiOutlineSearch />
                 </button>
               </form>
@@ -256,6 +261,15 @@ const Home = ({ data }) => {
                   const maxPrice = priceFilter * 50000
                   return node.productPrice >= minPrice && node.productPrice <= maxPrice
                 } 
+              }).filter((node) => {
+                if (searchQuery === '') {
+                  return node; // If no search query, show all products
+                } else {
+                  return (
+                    node.productName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    node.productParagraph.toLowerCase().includes(searchQuery.toLowerCase())
+                  );
+                }
               }).map((node, i) => (
                 <div key={node?.id}>
                   <div className={indexStyles.productGridBox}>

@@ -23,6 +23,7 @@ const Shopping = ({data}) =>{
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isCategoryActive, setIsCategoryActive] = useState(false);
     const [isPriceActive, setIsPriceActive] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
 
 
     const toggleSidebar = () => {
@@ -40,6 +41,10 @@ const Shopping = ({data}) =>{
     const openPriceDropdown = () => {
       setIsPriceActive(!isPriceActive);
     };
+
+    const handleSearchInputChange = (e) => {
+      setSearchQuery(e.target.value);
+    };
     return (
       <Layout>
         <section>
@@ -47,7 +52,7 @@ const Shopping = ({data}) =>{
         <div> 
             <div className={shoppingStyles.searchForm}>
               <form>
-                <input type="text" placeholder="Search.." name="search" className={shoppingStyles.searchInput}/>
+                <input type="text" placeholder="Search.." name="search" className={shoppingStyles.searchInput} value={searchQuery} onChange={handleSearchInputChange}/>
                 <button type="submit" className={shoppingStyles.searchButton}><AiOutlineSearch/></button>
               </form>
               <div className="mobile-menu-icon" onClick={toggleSidebar}>
@@ -210,6 +215,15 @@ const Shopping = ({data}) =>{
                   const maxPrice = priceFilter * 50000
                   return node.productPrice >= minPrice && node.productPrice <= maxPrice
                 } 
+              }).filter((node) => {
+                if (searchQuery === '') {
+                  return node; // If no search query, show all products
+                } else {
+                  return (
+                    node.productName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    node.productParagraph.toLowerCase().includes(searchQuery.toLowerCase())
+                  );
+                }
               }).map((node, i) => (
                   <div key ={node?.id}>
                     <div className= {shoppingStyles.productGridBox}>
