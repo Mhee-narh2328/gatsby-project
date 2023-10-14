@@ -20,8 +20,10 @@ import Seo from '../components/seo'
 const Shopping = ({data}) =>{
     const [category, setCategory] = useState(null)
     const [priceFilter, setPriceFilter] = useState(null)
-    const [isActive, SetIsActive] = useState(false)
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isCategoryActive, setIsCategoryActive] = useState(false);
+    const [isPriceActive, setIsPriceActive] = useState(false);
+
 
     const toggleSidebar = () => {
       setIsSidebarOpen(!isSidebarOpen);
@@ -29,6 +31,16 @@ const Shopping = ({data}) =>{
 
     const closeSidebar = () => {
       setIsSidebarOpen(false);
+    };
+
+    const openCategoryDropdown = () => {
+      setIsCategoryActive(!isCategoryActive);
+      setIsPriceActive(false); // Close the Price dropdown
+    };
+  
+    const openPriceDropdown = () => {
+      setIsPriceActive(!isPriceActive);
+      setIsCategoryActive(false); // Close the Category dropdown
     };
     return (
       <Layout>
@@ -47,11 +59,10 @@ const Shopping = ({data}) =>{
             </div>
             <div className={shoppingStyles.main}>
               <div className={shoppingStyles.dropdown}>
-                <div className={shoppingStyles.dropdownBtn} onClick={(e) =>
-                  SetIsActive(!isActive)} >Categories
+                <div className={shoppingStyles.dropdownBtn}  onClick={openCategoryDropdown} >Categories
                   <span><MdOutlineKeyboardArrowDown /></span>
                 </div>
-                {isActive && (
+                {isCategoryActive && (
                   <div className={shoppingStyles.dropdownContent}>
                     <div className={shoppingStyles.dropdownItem}>
                       <div>
@@ -75,11 +86,10 @@ const Shopping = ({data}) =>{
                 )}
               </div>
               <div className={shoppingStyles.dropdown}>
-                <div className={shoppingStyles.dropdownBtn} onClick={(e) =>
-                  SetIsActive(!isActive)}>Price
+                <div className={shoppingStyles.dropdownBtn} onClick={openPriceDropdown}>Price
                   <span><MdOutlineKeyboardArrowDown /></span>
                 </div>
-                {isActive && (
+                {isPriceActive && (
                   <div className={shoppingStyles.dropdownContent}>
                     <div className={shoppingStyles.dropdownItem}>
                       <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
@@ -117,11 +127,10 @@ const Shopping = ({data}) =>{
                 <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
                   <button type="submit" onClick={closeSidebar} className={shoppingStyles.searchArrow}><StaticImage src= '../images/close.png' className={shoppingStyles.arrow} alt="close"/></button>
                   <div className="dropdown">
-                      <div className="dropdown-btn" onClick={(e) =>
-                        SetIsActive(!isActive)}>Categories
+                      <div className="dropdown-btn"onClick={openCategoryDropdown}>Categories
                         <span><MdOutlineKeyboardArrowDown /></span>
                       </div>
-                      {isActive && (
+                      {isCategoryActive && (
                         <div className="dropdown-content">
                           <div className="dropdown-item">
                             <div>
@@ -145,11 +154,10 @@ const Shopping = ({data}) =>{
                       )}
                     </div>
                     <div className="dropdown">
-                      <div className="dropdown-btn" onClick={(e) =>
-                        SetIsActive(!isActive)}>Price
+                      <div className="dropdown-btn" onClick={openPriceDropdown}>Price
                         <span><MdOutlineKeyboardArrowDown /></span>
                       </div>
-                      {isActive && (
+                      {isPriceActive && (
                         <div className="dropdown-content">
                           <div className="dropdown-item">
                             <input type="radio" name="priceFilter" onClick={() => setPriceFilter(null)} />
