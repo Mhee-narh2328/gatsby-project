@@ -73,7 +73,7 @@ const [productDetails, setProductDetails] = useState({
                         <h1>{props.data.contentfulProduct.productName}</h1>
                         <p>{props.data.contentfulProduct.productParagraph}</p>
                         <h4>#{props.data.contentfulProduct.productPrice}</h4>
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>Contact Seller</button>
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={descriptionStyles.contactButton}>Contact Seller</button>
                         {isMenuOpen && (
                         <div
                             className={descriptionStyles.descriptionContainerContentImages}
