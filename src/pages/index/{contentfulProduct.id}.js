@@ -56,6 +56,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                             <img src={props.data.contentfulProduct.productImage4.url} alt = "rightview" className={descriptionStyles.descriptionImage} />
                         </div>
                     </div>
+                    <div className={descriptionStyles.desktop}>
                     <div className={descriptionStyles.descriptionContainerContent}>
                         <h1>{props.data.contentfulProduct.productName}</h1>
                         <p>{props.data.contentfulProduct.productParagraph}</p>
@@ -94,7 +95,9 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                         </div>
                         )}
                     </div>
+                    </div>
                 </div>
+                <div className={descriptionStyles.desktop}>
                 <div className={descriptionStyles.pageDescription}>
                     <h1>Description</h1>
                     <div className={descriptionStyles.pageDescriptionBoxes}>
@@ -134,6 +137,57 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                     <div className={descriptionStyles.pageDescriptionContent}>
                         <p>{renderRichText(props.data.contentfulProduct.productDescription, options)}</p>
                     </div>
+                </div>
+                </div>
+                <div className={descriptionStyles.mobile}>
+                    <h1>{props.data.contentfulProduct.productName}</h1>
+                    <div className={descriptionStyles.mobileFlex} > 
+                    <p> <span>Color:</span> {props.data.contentfulProduct.productColor}</p>
+                    <div className={descriptionStyles.verticalLine}></div>
+                    <p> <span>Size:</span> {props.data.contentfulProduct.productSize}</p>
+                    <div className={descriptionStyles.verticalLine}></div>
+                    <p> <span>Material:</span> {props.data.contentfulProduct.productMaterial}</p>
+                    <div className={descriptionStyles.verticalLine}></div>
+                    <p> <span>Seating Capacity:</span> {props.data.contentfulProduct.productSeatingCapacity}</p>
+                    </div>  
+                    <h1>#{props.data.contentfulProduct.productPrice}</h1>
+                    <div className={descriptionStyles.mobileContent}>
+                        <p>{renderRichText(props.data.contentfulProduct.productDescription, options)}</p>
+                    </div>
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)}>Contact Seller</button>
+                        {isMenuOpen && (
+                        <div
+                            className={descriptionStyles.descriptionContainerContentImages}
+                        >
+                            <Link to="https://wa.link/chnxm1" target="_blank">
+                                <StaticImage
+                                    src="../../images/whatsapp.png"
+                                    className={descriptionStyles.descriptionContainerContentImage}
+                                />
+                            </Link>
+
+                            <Link to="https://ig.me/m/murpelmodernfurniture" target="_blank">
+                                <StaticImage
+                                    src="../../images/instagram.png"
+                                    className={descriptionStyles.descriptionContainerContentImage}
+                                />
+                            </Link>
+
+                            <StaticImage
+                                src="../../images/phone.png"
+                                className={descriptionStyles.descriptionContainerContentImage}
+                            />
+
+                            <Link >
+                                <StaticImage
+                                    src="../../images/gmail.png"
+                                    className={descriptionStyles.descriptionContainerContentImage}
+                                />
+                            </Link>
+
+                        </div>
+                        )}
+                                    
                 </div>
 
                 <div className={descriptionStyles.similarProductsSection}>

@@ -32,7 +32,11 @@
     cursor: pointer;
     z-index: 2;
     display: none;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+    background-color: #FE5E00;
+    height: 40px;
+    padding: 0.5rem;
+    border-radius: 8px;
   }
   
   .dropdown{

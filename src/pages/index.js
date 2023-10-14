@@ -44,7 +44,7 @@ const Home = ({ data }) => {
         </div>
         <div className={indexStyles.heroGrid}>
           <div>
-            <StaticImage alt='logo' src='../images/Group 10152.png'  className={indexStyles.heroGridImage} />
+            <StaticImage alt='logo' src='../images/Group 10152.png'  />
           </div>
           <div className={indexStyles.heroContent}>
             <p>We are the best furniture platform. We are already working on thousands of <br /> future home projects. Trust us, you will surely be satisfied.</p>
@@ -55,7 +55,7 @@ const Home = ({ data }) => {
             </div>
           </div>
           <div>
-            <StaticImage alt='hero' src='../images/Group 10151.png' className={indexStyles.heroGridImage} />
+            <StaticImage alt='hero' src='../images/Group 10151.png'  />
           </div>
 
         </div>
@@ -91,14 +91,13 @@ const Home = ({ data }) => {
                 <input type="text" placeholder="Search.." name="search" className={indexStyles.searchInput} />
                 <button type="submit"  className={indexStyles.searchButton}><AiOutlineSearch />
                 </button>
-                
               </form>
               <div className="mobile-menu-icon" onClick={toggleSidebar}>
                   <StaticImage src= '../images/filter.png' alt='menu'/>
                 </div>
               {/* <MobileSidebar /> */}
             </div>
-            <div className={indexStyles.main}>
+            <div >
               <div className={indexStyles.dropdown}>
                 <div className={indexStyles.dropdownBtn} onClick={(e) =>
                   SetIsActive(!isActive)} >Categories
