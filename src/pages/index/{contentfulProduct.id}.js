@@ -38,6 +38,18 @@ const options = {
 
 const DescriptionPage = (props) => {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [productDetails, setProductDetails] = useState({
+    name: props.data.contentfulProduct.productName,
+    price: props.data.contentfulProduct.productPrice,
+    image: props.data.contentfulProduct.productImage1.url,
+  });
+
+  const openWhatsApp = () => {
+    const message = `Hi, I'm interested in the product: ${productDetails.name} priced at #${productDetails.price}. Here is the product image: ${productDetails.image}. Can you provide more information?`;
+    const whatsappURL = `https://wa.me/2348120094351?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, '_blank');
+  };
     return (
         <Layout>
             <section>
@@ -66,12 +78,13 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                         <div
                             className={descriptionStyles.descriptionContainerContentImages}
                         >
-                            <Link to="https://wa.link/chnxm1" target="_blank">
+                            <button onClick={openWhatsApp}>
+
                                 <StaticImage
                                     src="../../images/whatsapp.png"
                                     className={descriptionStyles.descriptionContainerContentImage}
                                 />
-                            </Link>
+                            </button>
 
                             <Link to="https://ig.me/m/murpelmodernfurniture" target="_blank">
                                 <StaticImage

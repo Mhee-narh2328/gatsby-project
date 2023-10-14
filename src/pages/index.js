@@ -29,20 +29,13 @@ const Home = ({ data }) => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
-  // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // // Function to toggle the sidebar visibility
-  // const toggleSidebar = () => {
-  //   setIsSidebarOpen(!isSidebarOpen);
-  // };
   const openCategoryDropdown = () => {
     setIsCategoryActive(!isCategoryActive);
-    setIsPriceActive(false); // Close the Price dropdown
   };
 
   const openPriceDropdown = () => {
     setIsPriceActive(!isPriceActive);
-    setIsCategoryActive(false); // Close the Category dropdown
   };
 
   return (

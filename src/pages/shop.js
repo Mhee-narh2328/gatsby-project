@@ -35,12 +35,10 @@ const Shopping = ({data}) =>{
 
     const openCategoryDropdown = () => {
       setIsCategoryActive(!isCategoryActive);
-      setIsPriceActive(false); // Close the Price dropdown
     };
   
     const openPriceDropdown = () => {
       setIsPriceActive(!isPriceActive);
-      setIsCategoryActive(false); // Close the Category dropdown
     };
     return (
       <Layout>
