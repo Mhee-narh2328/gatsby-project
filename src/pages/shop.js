@@ -24,6 +24,8 @@ const Shopping = ({data}) =>{
     const [isCategoryActive, setIsCategoryActive] = useState(false);
     const [isPriceActive, setIsPriceActive] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 9; // Number of products to display per page
 
 
     const toggleSidebar = () => {
@@ -224,7 +226,8 @@ const Shopping = ({data}) =>{
                     node.productParagraph.toLowerCase().includes(searchQuery.toLowerCase())
                   );
                 }
-              }).map((node, i) => (
+              }).slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage) // Pagination
+              .map((node, i) => (
                   <div key ={node?.id}>
                     <div className= {shoppingStyles.productGridBox}>
                     <div className= {shoppingStyles.productGridBoxImageCon}>
@@ -248,12 +251,29 @@ const Shopping = ({data}) =>{
           
         </div>
         <div className={shoppingStyles.paginationButton}>
-          <button><IoIosArrowBack className={shoppingStyles.paginationIcon}/></button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button><IoIosArrowForward className={shoppingStyles.paginationIcon}/></button>
-        </div>
+            <button
+              onClick={() => setCurrentPage(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              <IoIosArrowBack className={shoppingStyles.paginationIcon} />
+            </button>
+            {Array.from({ length: Math.ceil(data?.allContentfulProduct.nodes.length / productsPerPage) }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={currentPage === i + 1 ? shoppingStyles.activePage : ''}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              onClick={() => setCurrentPage(currentPage + 1)}
+              disabled={currentPage === Math.ceil(data?.allContentfulProduct.nodes.length / productsPerPage)}
+            >
+              <IoIosArrowForward className={shoppingStyles.paginationIcon} />
+            </button>
+          </div>
+
       </section>
       </Layout>
     );
