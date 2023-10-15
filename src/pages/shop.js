@@ -62,7 +62,7 @@ const Shopping = ({data}) =>{
               </div>
               {/* <MobileSidebar /> */}
             </div>
-            <div className={shoppingStyles.main}>
+            <div>
               <div className={shoppingStyles.dropdown}>
                 <div className={shoppingStyles.dropdownBtn}  onClick={openCategoryDropdown} >Categories
                   <span><MdOutlineKeyboardArrowDown /></span>

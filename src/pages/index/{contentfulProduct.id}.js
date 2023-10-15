@@ -247,7 +247,7 @@ const [productDetails, setProductDetails] = useState({
                                     </p>
                                     <div className={descriptionStyles.productBoxGrid}>
                                         <h5>{node.productPrice}</h5>
-                                        <Link to="">
+                                        <Link to = {`/index/${node.id}`}>
                                             <h6>
                                                 BUY NOW{" "}
                                                 <span>

@@ -10,6 +10,18 @@ section{
     margin: 0 4rem;
 }
 
+.iconContainer {
+    /* width: 100px; 
+    height: 100px; */
+    filter: grayscale(100%);
+    transition: filter 0.2s; /* Add a smooth transition effect */
+}
+
+/* Change the filter on hover to change the color */
+.iconContainer:hover {
+    filter: grayscale(0%);; /* Adjust brightness to change the color on hover */
+}
+
 .searchArrow{
     background-color: #fff;
 }
@@ -579,7 +591,7 @@ layout{
 }
 
 .descriptionContainerContentImage{
-    width: 50px;
+    width: 35px;
 }
 
 .pageDescription{
@@ -699,6 +711,10 @@ layout{
     transition: all 0.2s;
     display: grid;
     grid-template-columns: 0.175fr 1fr;
+}
+
+.dropdown .dropdownContent .dropdownItem span:hover{
+    color: #FE5E00;
 }
 
 
@@ -1061,7 +1077,12 @@ input[type="radio"] {
     /* .searchInput{
         width: 100px;
     } */
-    
+
+        .descriptionContainerContentImages{
+        display: flex;
+        gap: 0.5rem;
+    }
+        
 
      .descriptionSection{
         display: grid;
@@ -1128,12 +1149,13 @@ input[type="radio"] {
      }
 
      .serviceGrid{
-        background-color: #ffff;
+        display: none;
+        /* background-color: #ffff;
         padding: 1rem 0.5rem;
         margin: 2rem ;
         gap: 1rem;
         border-radius: 25px;
-        box-shadow: 0px 3.5px 10.5px -7.875px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 3.5px 10.5px -7.875px rgba(0, 0, 0, 0.25); */
     }
 
      .serviceGridBlue{

@@ -112,14 +112,14 @@ const Home = ({ data }) => {
                 {isCategoryActive && (
                   <div className={indexStyles.dropdownContent}>
                     <div className={indexStyles.dropdownItem}>
-                      <div>
-                        <StaticImage alt='logo' src='../images/home.png' className={indexStyles.dropdownImage} />
+                      <div class={indexStyles.iconContainer}>
+                        <StaticImage alt='logo' src='../images/home.svg' className={indexStyles.dropdownImage} />
                       </div>
                       <span onClick={() => setCategory('All')}>All</span>
                     </div>
                     {data?.allContentfulCategory.nodes.map((node, i) => (
                       <div className={indexStyles.dropdownItem}>
-                        <div>
+                        <div  class={indexStyles.iconContainer}>
                           <img alt='logo' src={node?.categoryImage.url} className={indexStyles.dropdownImage} />
                         </div>
                         <span key={node?.id}
