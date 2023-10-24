@@ -44,22 +44,23 @@ const [productDetails, setProductDetails] = useState({
     image: props.data.contentfulProduct.productImage1.url,
   });
 
-  const openEmail = () => {
+const openEmail = () => {
     const subject = `Product Inquiry: ${productDetails.name}`;
     const body = `Hi, I'm interested in the product: ${productDetails.name} priced at $${productDetails.price}.\n\nHere is the product image: ${productDetails.image}.\n\nCan you provide more information?`;
-
-    // Construct the "mailto" link
     const mailtoLink = `mailto:muminatadefabi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // Open the default email client
     window.location.href = mailtoLink;
 };
 
 const openWhatsApp = () => {
     const message = `Hi, I'm interested in the product: ${productDetails.name} priced at $${productDetails.price}. Here is the product image: ${productDetails.image}. Can you provide more information?`;
     const whatsappURL = `https://wa.me/2348120094351?text=${encodeURIComponent(message)}`;
-
     window.open(whatsappURL, '_blank');
+};
+
+const makePhoneCall = () => {
+    const phoneNumber = "+2348120094351"; 
+    const telLink = `tel:${phoneNumber}`;
+    window.location.href = telLink;
 };
     return (
         <Layout>
@@ -103,12 +104,13 @@ const openWhatsApp = () => {
                                     className={descriptionStyles.descriptionContainerContentImage}
                                 />
                             </Link>
-
-                            <StaticImage
-                                src="../../images/phone.png"
-                                className={descriptionStyles.descriptionContainerContentImage}
-                            />
-
+                            
+                            <button onClick={makePhoneCall}>
+                                <StaticImage
+                                    src="../../images/phone.png"
+                                    className={descriptionStyles.descriptionContainerContentImage}
+                                />
+                            </button>
                             <button onClick={openEmail}>
                                 <StaticImage
                                     src="../../images/gmail.png"
