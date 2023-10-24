@@ -49,7 +49,7 @@ const [productDetails, setProductDetails] = useState({
     const body = `Hi, I'm interested in the product: ${productDetails.name} priced at $${productDetails.price}.\n\nHere is the product image: ${productDetails.image}.\n\nCan you provide more information?`;
 
     // Construct the "mailto" link
-    const mailtoLink = `mailto:adefabimuminat@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:muminatadefabi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // Open the default email client
     window.location.href = mailtoLink;
