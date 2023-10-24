@@ -62,6 +62,13 @@ const makePhoneCall = () => {
     const telLink = `tel:${phoneNumber}`;
     window.location.href = telLink;
 };
+
+const openInstagram = () => {
+    const instagramUsername = "OmotayoEniola";
+    const caption = `Check out this product: ${productDetails.name}, priced at $${productDetails.price}.`;
+    const instagramURL = `instagram://user?username=${instagramUsername}&caption=${encodeURIComponent(caption)}`;
+    window.location.href = instagramURL;
+};
     return (
         <Layout>
             <section>
@@ -98,12 +105,12 @@ const makePhoneCall = () => {
                                 />
                             </button>
 
-                            <Link to="https://ig.me/m/murpelmodernfurniture" target="_blank">
+                            <button onClick={openInstagram}>
                                 <StaticImage
                                     src="../../images/instagram.png"
                                     className={descriptionStyles.descriptionContainerContentImage}
                                 />
-                            </Link>
+                            </button>
                             
                             <button onClick={makePhoneCall}>
                                 <StaticImage
@@ -192,13 +199,19 @@ const makePhoneCall = () => {
                                     className={descriptionStyles.descriptionContainerContentImage}
                                 />
                             </button>
-
-                            <Link to="https://ig.me/m/murpelmodernfurniture" target="_blank">
+                            <button onClick={openInstagram}>
                                 <StaticImage
                                     src="../../images/instagram.png"
                                     className={descriptionStyles.descriptionContainerContentImage}
                                 />
-                            </Link>
+                            </button>
+
+                            {/* <Link to="https://ig.me/m/murpelmodernfurniture" target="_blank">
+                                <StaticImage
+                                    src="../../images/instagram.png"
+                                    className={descriptionStyles.descriptionContainerContentImage}
+                                />
+                            </Link> */}
 
                             <button onClick={makePhoneCall}>
                                 <StaticImage
