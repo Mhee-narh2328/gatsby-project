@@ -64,7 +64,7 @@ const makePhoneCall = () => {
 };
 
 const openInstagram = () => {
-    const instagramUsername = "OmotayoEniola";
+    const instagramUsername = "murpelmodernfurniture";
     const caption = `Check out this product: ${productDetails.name}, priced at $${productDetails.price}.`;
     const instagramURL = `instagram://user?username=${instagramUsername}&caption=${encodeURIComponent(caption)}`;
     window.location.href = instagramURL;
@@ -274,7 +274,7 @@ const openInstagram = () => {
                                         {node.productParagraph}
                                     </p>
                                     <div className={descriptionStyles.productBoxGrid}>
-                                        <h5>{node.productPrice}</h5>
+                                        <h5>#{node.productPrice}</h5>
                                         <Link to = {`/index/${node.id}`}>
                                             <h6>
                                                 BUY NOW{" "}
