@@ -200,10 +200,12 @@ const makePhoneCall = () => {
                                 />
                             </Link>
 
-                            <StaticImage
-                                src="../../images/phone.png"
-                                className={descriptionStyles.descriptionContainerContentImage}
-                            />
+                            <button onClick={makePhoneCall}>
+                                <StaticImage
+                                    src="../../images/phone.png"
+                                    className={descriptionStyles.descriptionContainerContentImage}
+                                />
+                            </button>
 
                             <button onClick={openEmail}>
                                 <StaticImage
